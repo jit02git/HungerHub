@@ -18,20 +18,17 @@ const Header = () => {
   );
 };
 
-const styleCard = {
-  width: '200px',
-  height: '300px',
-  border: '1px solid black',
-  backgroundColor: 'lightgrey'
-};
+
 
 const RestaurantCard = () => {
   return (
-    <div className="res-card" style={styleCard}>
+    <div className="res-card" >
       <img class="sc-bXCLTC jRHowI" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/12/9/5012151f-f70c-4b31-ae59-d57aeb4273ac_87259.JPG" alt="KFC"/>
       <h3>KFC Foods</h3>
       <p>Chandigarh</p>
       <p>Rating: 4.5</p>
+      <p>Price: $10.99</p>
+      <p>39 minutes</p>
     </div>
   );
 };
