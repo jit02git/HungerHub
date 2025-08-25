@@ -1,3 +1,47 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, nav right */
+    align-items: center;            /* Vertically centers items */
+    height: 60px;
+    padding: 0 20px;                /* Optional: adds horizontal padding */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Adds a soft bottom shadow */
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.logo-container img {
+    height: 50px;                   /* Adjust as needed */
+}
+
+.nav-items ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li {
+    margin: 0 15px;
+}
+
+.res-card {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    img{
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+}   
+
+.search{
+    padding: 10px;
+
+}
