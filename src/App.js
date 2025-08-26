@@ -1620,7 +1620,6 @@ const resObj = {
 };
 
 const RestaurantCard = ({ resData }) => {
-  // Extract info from resData
   const { name, cloudinaryImageId, areaName, avgRating, costForTwo, sla } = resData.info;
   return (
     <div className="res-card">

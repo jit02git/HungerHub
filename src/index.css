@@ -4,17 +4,17 @@
 
 .header {
     display: flex;
-    justify-content: space-between; /* Pushes logo left, nav right */
-    align-items: center;            /* Vertically centers items */
+    justify-content: space-between; 
+    align-items: center;          
     height: 60px;
-    padding: 0 20px;                /* Optional: adds horizontal padding */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Adds a soft bottom shadow */
+    padding: 0 20px;              
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
     background-color: lightgray;
     border-radius: 5px;
 }
 
 .logo-container img {
-    height: 50px;                   /* Adjust as needed */
+    height: 50px;                 
 }
 
 .nav-items ul {
@@ -29,8 +29,8 @@
 }
 
 .res-card {
-    flex: 0 0 calc(25% - 20px); /* 4 cards per row, minus gap */
-    width: calc(25% - 20px);    /* Ensures 4 per row */
+    flex: 0 0 calc(25% - 20px); 
+    width: calc(25% - 20px);   
     height: 350px;
     background-color: lightgrey;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -48,12 +48,12 @@
     height: 150px;
     object-fit: cover;
 }
-/* i want to show only 4 div in a row */
+
 .res-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Align cards to the left */
-    gap: 20px;                   /* Space between cards */
+    justify-content: flex-start;
+    gap: 20px;    
     max-width: 1200px;
     margin: 0 auto;
 }
