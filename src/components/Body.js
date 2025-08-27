@@ -21,6 +21,15 @@ const Body = () => {
     setFilteredRestaurants(filtered);
   };
 
+  const searchFilter = () => {
+    const searchTerm = document.querySelector("input[name='search']").value.toLowerCase();
+    const filtered = resObj.restaurants.filter(
+      (restaurant) =>
+        restaurant.info.name.toLowerCase().includes(searchTerm)
+    );
+    setFilteredRestaurants(filtered);
+  }
+
   return (
     <div className="body">
       <div className="search">
@@ -36,6 +45,7 @@ const Body = () => {
         >
           Italian restaurants
         </button>
+        <input type='text' name='search' placeholder='Search here...' onChange={searchFilter}/>
       </div>
       <div className="res-container"> 
         {filteredRestaurants.map((restaurant) => (
