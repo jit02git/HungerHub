@@ -1,25 +1,7 @@
 import "./App.css";
+import Body from "./components/Body";
+import Header from "./components/Header";
 
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          src="https://imgs.search.brave.com/R1iP8130WaxJit06hw1uxeUdZogrAGuCJIjqfAYowQw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvNTAwcC80/Ni8zMC9tb2Rlcm4t/YnVyZ2VyLWxldHRl/ci1lLWxvZ28tdmVj/dG9yLTUxMzk0NjMw/LmpwZw"
-          alt="Logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const resObj = {
   restaurants: [
@@ -1619,38 +1601,11 @@ const resObj = {
   ],
 };
 
-const RestaurantCard = ({ resData }) => {
-  const { name, cloudinaryImageId, areaName, avgRating, costForTwo, sla } = resData.info;
-  return (
-    <div className="res-card">
-      <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`} alt={name} />
-      <h3>{name}</h3>
-      <p>{areaName}</p>
-      <p>Rating: {avgRating}</p>
-      <p>Price: {costForTwo}</p>
-      <p>{sla?.slaString}</p>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resObj.restaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
 function AppLayout() {
   return (
     <div className="App">
       <Header />
-      <Body />
+      <Body resObj={resObj} />
     </div>
   );
 }
