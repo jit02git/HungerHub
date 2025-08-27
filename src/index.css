@@ -60,6 +60,20 @@
 
 
 .search {
+    display: flex;
+    align-items: center;
     padding: 10px;
+    justify-content: flex-start;
+    width: 100%;           /* Add this line */
+    box-sizing: border-box; /* Add this for consistency */
+}
 
+.filter-btn {
+    background-color: darkgrey;
+    color: white;
+    border: none;
+    /* margin-left: auto;  Remove this line */
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
 }
