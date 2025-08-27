@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
+import {resObj} from '../Utils/mockData'
 
-const Body = ({ resObj } ) => {
+const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
