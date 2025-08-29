@@ -4,16 +4,17 @@ import { resObj } from '../Utils/mockData';
 
 const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState(resObj.restaurants);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filterTopRated = () => {
-    const filtered = filteredRestaurants.filter(
+    const filtered = resObj.restaurants.filter(
       (restaurant) => restaurant.info.avgRating > 4
     );
     setFilteredRestaurants(filtered);
   };
 
   const filterItalian = () => {
-    const filtered = filteredRestaurants.filter(
+    const filtered = resObj.restaurants.filter(
       (restaurant) =>
         Array.isArray(restaurant.info.cuisines) &&
         restaurant.info.cuisines.includes("Italian")
@@ -21,14 +22,15 @@ const Body = () => {
     setFilteredRestaurants(filtered);
   };
 
-  const searchFilter = () => {
-    const searchTerm = document.querySelector("input[name='search']").value.toLowerCase();
+  const handleSearchChange = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
     const filtered = resObj.restaurants.filter(
       (restaurant) =>
-        restaurant.info.name.toLowerCase().includes(searchTerm)
+        restaurant.info.name.toLowerCase().includes(value)
     );
     setFilteredRestaurants(filtered);
-  }
+  };
 
   return (
     <div className="body">
@@ -45,7 +47,13 @@ const Body = () => {
         >
           Italian restaurants
         </button>
-        <input type='text' name='search' placeholder='Search here...' onChange={searchFilter}/>
+        <input
+          type='text'
+          name='search'
+          placeholder='Search here...'
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
       </div>
       <div className="res-container"> 
         {filteredRestaurants.map((restaurant) => (
